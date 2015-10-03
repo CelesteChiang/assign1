@@ -1,7 +1,7 @@
 /* please implement your assign1 code in this file. */
 
 PImage healthPoint , treasure , outerSpace1 , outerSpace2 , enemy , fighter ;
-int xOuterSpace , hpAmount , xEnemy , yEnemy , xTreasure , yTreasure ;
+int xOuterSpace , hpAmount , xEnemy , yEnemy , enemySpeed , xTreasure , yTreasure ;
 
 void setup () {
   size(640,480) ; 
@@ -21,6 +21,7 @@ void setup () {
   enemy = loadImage("img/enemy.png") ; 
   xEnemy = -15 ;
   yEnemy = floor(random(80,400)) ;
+  enemySpeed = floor(random(2,7)) ;
   
   fighter = loadImage("img/fighter.png") ;
   
@@ -48,7 +49,7 @@ void draw() {
   
   //enemy
   image(enemy,xEnemy,yEnemy) ;  
-  xEnemy += 3 ;
+  xEnemy += enemySpeed ;
   xEnemy %= 640 ;
     
 }
